@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Purchase Prediction</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+    <form id="predictForm" action="/predict" method="post" class="container">
+        <div class="row">
+            <div class="col col-2"></div>
+            <div class="col col-4">
+                <label for="age">Age</label><br>
+                <input type="number" name="age" placeholder="Age" required><br>
+                <label for="annual_income">Annual Income</label><br>
+                <input type="number" name="annual_income" placeholder="Annual Income" step="0.01" required><br>
+                <label for="number_of_purchases">Number of Purchases</label><br>
+                <input type="number" name="number_of_purchases" placeholder="Number of Purchases" required><br>
+                <label for="time_spent_on_website">Time Spent on Website (minutes)</label><br>
+                <input type="number" name="time_spent_on_website" placeholder="Time Spent on Website" required><br>
+                <label for="discounts_availed">Discounts Availed</label><br>
+                <input type="number" name="discounts_availed" id="discounts_availed" placeholder="Discounts Availed"
+                    required><br>
+            </div>
+            <div class="col col-4">
+                <label>Gender:</label><br>
+                <input type="radio" id="male" name="gender" value="0" required>
+                <label for="male" class="radio_labels">Male</label><br>
+                <input type="radio" id="female" name="gender" value="1" required>
+                <label for="female" class="radio_labels">Female</label><br>
+                <label for="loyalty_program">Loyalty Program</label><br>
+                <input type="radio" id="loyalty_no" name="loyalty_program" value="0" required>
+                <label for="loyalty_no" class="radio_labels">No</label><br>
+                <input type="radio" id="loyalty_yes" name="loyalty_program" value="1" required>
+                <label for="loyalty_yes" class="radio_labels">Yes</label><br>
+
+                <label for="product_category">Product Category</label><br>
+                <select name="product_category" id="product_category" required>
+                    <option value="0">Electronics</option>
+                    <option value="1">Clothing</option>
+                    <option value="2">Home Goods</option>
+                    <option value="3">Beauty</option>
+                    <option value="4">Sports</option>
+                </select><br>
+                <div class="btn_container">
+                    <button type="submit" id="pred_btn">Predict</button><br>
+                    <a href="{{ url_for('static', filename='Customer purchase pred (3).pdf') }}" target="_blank"
+                        class="btn btn-primary" id="dashboard_btn">
+                        Project report
+                    </a>
+                </div>
+            </div>
+            <div class="col col-1"></div>
+        </div>
+    </form>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

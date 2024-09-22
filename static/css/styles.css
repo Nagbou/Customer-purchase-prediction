@@ -1,0 +1,68 @@
+body {
+    background-color: #0c1a27;
+    color: white;
+}
+
+.row {
+    width: 100%;
+    margin-top: 3%;
+}
+
+label {
+    color: #e0ecf1;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 2%;
+    margin-top: 5%;
+}
+
+input {
+    background-color: #1F2A37;
+    color: #ffffff;
+    border: 1px solid #3B4A5A;
+    outline: none;
+    padding: 2% 0 2% 2%;
+}
+
+select {
+    background-color: #1F2A37;
+    color: #ffffff;
+    border: 1px solid #3B4A5A;
+}
+
+.radio_labels {
+    color: white;
+    font-size: large;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.btn_container {
+    width: 100%;
+    margin-top: 20%;
+}
+
+#pred_btn,
+#dashboard_btn {
+    width: 100%;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 2%;
+    font-size: larger;
+    font-weight: bold;
+}
+
+#pred_btn:hover {
+    background-color: rgb(0, 196, 0);
+}
+
+#dashboard_btn {
+    margin-top: 5%;
+    background-color: rgb(160, 172, 0);
+}
+
+#dashboard_btn:hover {
+    background-color: rgb(206, 221, 0);
+}
